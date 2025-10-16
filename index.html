@@ -1,62 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College of Engineering Vadakara</title>
-    <link rel="stylesheet" href="cev-styles.css">
+    
+    <title>REGISTRATION FORM</title>
 </head>
 <body>
-    <div class="container">
-        <h1>College of Engineering Vadakara</h1>
-        <img src="https://via.placeholder.com/600x400" alt="College of Engineering Vadakara">
-        <p>The College of Engineering Vadakara (CEV), established in 1999, is a premier institution under the Co-operative Academy of Professional Education (CAPE), Government of Kerala. Located in the scenic Kozhikode district, CEV offers undergraduate and postgraduate programs in engineering and technology, including B.Tech in Civil, Computer Science, Electronics & Communication, Electrical & Electronics, and Information Technology, as well as MCA. Known for its academic excellence and serene environment, the college fosters innovation and skill development among students, preparing them for a dynamic future.</p>
-        <p>With state-of-the-art facilities and a dedicated faculty, CEV continues to contribute significantly to the engineering community, emphasizing practical learning and research. The campus, nestled in Mandarathore, Vatakara, provides an ideal setting for holistic education and personal growth.</p>
-    </div>
+<style>
+body {
+background-color: #2e2e2e;
+color: white;
+}
+h2 {
+color: orange;
+}
+button { 
+color: red;
+}
+
+</style>
+
+
+
+
+   	<center>
+        <h2>REGISTRATION FORM</h2>
+   
+            <table border="0" cellpadding="5">
+                <tr>
+                    <td>Full Name</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Mobile Number</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Email id</td>
+                    <td><input type="email"></td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td><input type="number"></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <input type="radio" name="gender"> Male
+                        <input type="radio" name="gender"> Female
+                        <input type="radio" name="gender"> Others
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date Of Birth</td>
+                    <td><input type="date"></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><textarea rows="4" cols="25"></textarea></td>
+                </tr>
+                <tr>
+                    <td>current Study</td>
+                    <td>
+                        <select>
+                            <option>BCA</option>
+                            <option>MCA</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Department</td>
+                    <td>
+                        <select>
+                            <option>cs</option>
+                            <option>it</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Uplod CV</td>
+                    <td>
+                        <input type="file">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Programming Languages</td>
+                    <td>
+                        <input type="checkbox"> HTML
+                        <input type="checkbox"> Reactjs
+                        <input type="checkbox"> CSS
+                        <input type="checkbox"> Flutter
+                    </td>
+                </tr>
+                <tr>
+                    <td>Language</td>
+                    <td>
+                        <input type="checkbox"> English
+                        <input type="checkbox"> Malayalam
+                        <input type="checkbox"> Arabic
+                        <input type="checkbox"> Hindi
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit">submit</button>
+                        <button type="reset">reset</button>
+                    </td>
+                </tr>
+            </table>
+       </form>
+    </center>
+
 </body>
 </html>
-
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #e6f3fa; /* Light blue background */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.container {
-    text-align: center;
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    max-width: 850px;
-}
-
-h1 {
-    color: #1e90ff; /* Dodger blue */
-    font-size: 2.8em;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-}
-
-p {
-    color: #4682b4; /* Steel blue */
-    font-size: 1.2em;
-    margin-bottom: 25px;
-    line-height: 1.7;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    border: 4px solid #1e90ff;
-}
