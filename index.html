@@ -1,115 +1,314 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REGISTRATION FORM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%23ffffff12;stop-opacity:1" /><stop offset="100%" style="stop-color:%230000001a;stop-opacity:1" /></radialGradient></defs><rect width="100%" height="100%" fill="url(%23a)" /><circle cx="200" cy="300" r="50" fill="%23ffffff0d" opacity="0.3"/><circle cx="800" cy="200" r="70" fill="%23ffffff0a" opacity="0.2"/><circle cx="100" cy="700" r="40" fill="%23ffffff08" opacity="0.1"/><circle cx="900" cy="600" r="60" fill="%23ffffff05" opacity="0.15"/></svg>');
+            background-color: #1a1a2e;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(46, 46, 78, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #ff6b35;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+            letter-spacing: 2px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 15px 10px;
+            vertical-align: middle;
+        }
+
+        td:first-child {
+            font-weight: 500;
+            color: #e0e0e0;
+            width: 30%;
+            font-size: 0.95em;
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="number"]:focus,
+        input[type="date"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #ff6b35;
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 15px rgba(255, 107, 53, 0.2);
+            transform: translateY(-2px);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 8px;
+            accent-color: #ff6b35;
+            transform: scale(1.2);
+        }
+
+        input[type="radio"] + label,
+        input[type="checkbox"] + label {
+            margin-right: 20px;
+            font-size: 0.9em;
+            cursor: pointer;
+            color: #e0e0e0;
+        }
+
+        select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23ff6b35' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 10px center;
+            background-repeat: no-repeat;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+
+        button {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 15px;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+            background: linear-gradient(45deg, #ff8e53, #ff6b35);
+        }
+
+        button:active {
+            transform: translateY(-1px);
+        }
+
+        button[type="reset"] {
+            background: linear-gradient(45deg, #6c757d, #495057);
+            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
+        }
+
+        button[type="reset"]:hover {
+            background: linear-gradient(45deg, #868e96, #6c757d);
+            box-shadow: 0 8px 25px rgba(108, 117, 125, 0.4);
+        }
+
+        tr:nth-child(even) td {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+        }
+
+        tr:hover td {
+            background: rgba(255, 107, 53, 0.05);
+        }
+
+        .checkbox-group,
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            h2 {
+                font-size: 2em;
+            }
+            
+            td {
+                display: block;
+                width: 100%;
+                padding: 10px 0;
+            }
+            
+            td:first-child {
+                text-align: left;
+                margin-bottom: 5px;
+                font-weight: 600;
+            }
+            
+            button {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+
+        /* Form wrapper for better structure */
+        form {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-<style>
-body {
-background-color: #2e2e2e;
-color: white;
-}
-h2 {
-color: orange;
-}
-button { 
-color: red;
-}
-
-</style>
-
-
-
-
-   	<center>
-        <h2>REGISTRATION FORM</h2>
-   
+    <div class="container">
+        <form>
+            <center>
+                <h2>REGISTRATION FORM</h2>
+            </center>
+           
             <table border="0" cellpadding="5">
                 <tr>
                     <td>Full Name</td>
-                    <td><input type="text"></td>
+                    <td><input type="text" placeholder="Enter your full name" required></td>
                 </tr>
                 <tr>
                     <td>Mobile Number</td>
-                    <td><input type="text"></td>
+                    <td><input type="text" placeholder="Enter mobile number" required></td>
                 </tr>
                 <tr>
                     <td>Email id</td>
-                    <td><input type="email"></td>
+                    <td><input type="email" placeholder="Enter email address" required></td>
                 </tr>
                 <tr>
                     <td>Age</td>
-                    <td><input type="number"></td>
+                    <td><input type="number" placeholder="Enter your age" min="1" max="120" required></td>
                 </tr>
                 <tr>
                     <td>Gender</td>
-                    <td>
-                        <input type="radio" name="gender"> Male
-                        <input type="radio" name="gender"> Female
-                        <input type="radio" name="gender"> Others
+                    <td class="radio-group">
+                        <label><input type="radio" name="gender" value="male" required> Male</label>
+                        <label><input type="radio" name="gender" value="female"> Female</label>
+                        <label><input type="radio" name="gender" value="others"> Others</label>
                     </td>
                 </tr>
                 <tr>
                     <td>Date Of Birth</td>
-                    <td><input type="date"></td>
+                    <td><input type="date" required></td>
                 </tr>
                 <tr>
                     <td>Address</td>
-                    <td><textarea rows="4" cols="25"></textarea></td>
+                    <td><textarea rows="4" cols="25" placeholder="Enter your address" required></textarea></td>
                 </tr>
                 <tr>
-                    <td>current Study</td>
+                    <td>Current Study</td>
                     <td>
-                        <select>
+                        <select required>
+                            <option value="">Select Course</option>
                             <option>BCA</option>
                             <option>MCA</option>
+                            <option>B.Tech</option>
+                            <option>M.Tech</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td>Department</td>
                     <td>
-                        <select>
-                            <option>cs</option>
-                            <option>it</option>
+                        <select required>
+                            <option value="">Select Department</option>
+                            <option>CS</option>
+                            <option>IT</option>
+                            <option>EC</option>
+                            <option>ME</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
-                    <td>Uplod CV</td>
+                    <td>Upload CV</td>
                     <td>
-                        <input type="file">
+                        <input type="file" accept=".pdf,.doc,.docx">
                     </td>
                 </tr>
                 <tr>
                     <td>Programming Languages</td>
-                    <td>
-                        <input type="checkbox"> HTML
-                        <input type="checkbox"> Reactjs
-                        <input type="checkbox"> CSS
-                        <input type="checkbox"> Flutter
+                    <td class="checkbox-group">
+                        <label><input type="checkbox" name="prog[]" value="html"> HTML</label>
+                        <label><input type="checkbox" name="prog[]" value="react"> Reactjs</label>
+                        <label><input type="checkbox" name="prog[]" value="css"> CSS</label>
+                        <label><input type="checkbox" name="prog[]" value="flutter"> Flutter</label>
                     </td>
                 </tr>
                 <tr>
-                    <td>Language</td>
-                    <td>
-                        <input type="checkbox"> English
-                        <input type="checkbox"> Malayalam
-                        <input type="checkbox"> Arabic
-                        <input type="checkbox"> Hindi
+                    <td>Languages</td>
+                    <td class="checkbox-group">
+                        <label><input type="checkbox" name="lang[]" value="english"> English</label>
+                        <label><input type="checkbox" name="lang[]" value="malayalam"> Malayalam</label>
+                        <label><input type="checkbox" name="lang[]" value="arabic"> Arabic</label>
+                        <label><input type="checkbox" name="lang[]" value="hindi"> Hindi</label>
                     </td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>
-                        <button type="submit">submit</button>
-                        <button type="reset">reset</button>
+                        <button type="submit">Submit</button>
+                        <button type="reset">Reset</button>
                     </td>
                 </tr>
             </table>
-       </form>
-    </center>
-
+        </form>
+    </div>
 </body>
 </html>
